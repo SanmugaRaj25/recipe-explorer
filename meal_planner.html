@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Meal Planner{% endblock %}
+{% block content %}
+<h1 class="text-center mb-4">Meal Planner</h1>
+<form action="{{ url_for('meal_planner') }}" method="POST" class="mb-4">
+    <div class="mb-3">
+        <label for="recipe_id" class="form-label">Select Recipe</label>
+        <select id="recipe_id" name="recipe_id" class="form-select">
+            {% for recipe in recipes %}
+            <option value="{{ recipe.id }}">{{ recipe.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add to Meal Planner</button>
+</form>
+<h2>Your Meal Plan</h2>
+<div class="row">
+    {% for recipe in meal_plan %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="{{ url_for('uploaded_file', filename=recipe.image) }}" class="card-img-top" alt="{{ recipe.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipe.title }}</h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

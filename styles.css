@@ -1,0 +1,180 @@
+/* Gradient background for the body */
+body.gradient-background {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue gradient */
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    color: #fff; /* Ensure text is readable on the gradient */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Gradient animation */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Example animation using transform */
+@keyframes example-animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+
+/* Apply animation to an element */
+.moving-element {
+    display: inline-block;
+    animation: example-animation 2s ease-in-out infinite;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #343a40;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2a5298 !important;
+}
+
+.nav-link {
+    color: #555 !important;
+}
+
+.nav-link:hover {
+    color: #1e3c72 !important;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #343a40;
+}
+
+/* Form styling */
+form {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    user-select: none;
+    -webkit-user-select: none; /* Safari 3+ */
+}
+
+button {
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Card styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Recipe details container styling */
+.recipe-details-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        font-size: 14px;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Container styling */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}

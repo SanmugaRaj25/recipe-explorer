@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ recipe.title }}{% endblock %}
+{% block content %}
+<div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+        <h1 class="card-title">{{ recipe.title }}</h1>
+    </div>
+    <div class="card-body">
+        <p><strong>Description:</strong> {{ recipe.description }}</p>
+        <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+        <p><strong>Steps:</strong> {{ recipe.steps }}</p>
+        <p><strong>Preparation Time:</strong> {{ recipe.prep_time }}</p>
+        <p><strong>Category:</strong> {{ recipe.category }}</p>
+        {% if recipe.image %}
+        <img src="{{ url_for('uploaded_file', filename=recipe.image) }}" alt="{{ recipe.title }}" class="img-fluid rounded mt-3">
+        {% else %}
+        <img src="{{ url_for('static', filename='default.jpg') }}" alt="Default Image" class="img-fluid rounded mt-3">
+        {% endif %}
+    </div>
+    <div class="card-footer text-end">
+        <a href="{{ url_for('view_recipes') }}" class="btn btn-secondary">Back to Recipes</a>
+    </div>
+</div>
+{% endblock %}
